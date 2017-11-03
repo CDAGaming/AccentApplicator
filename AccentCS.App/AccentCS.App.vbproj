@@ -78,9 +78,9 @@
     <Import Include="System.Threading.Tasks" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Application.vb" />
+    <Compile Include="Helpers\MyExtensions\Application.vb" />
     <Compile Include="ApplicationEvents.vb" />
-    <Compile Include="ExtensionMethods.vb" />
+    <Compile Include="Helpers\ExtensionMethods.vb" />
     <Compile Include="frmAboutBox.Designer.vb">
       <DependentUpon>frmAboutBox.vb</DependentUpon>
     </Compile>
@@ -105,6 +105,7 @@
     <Compile Include="frmMain.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Helpers\PrepareControls.vb" />
     <Compile Include="My Project\AssemblyInfo.vb" />
     <Compile Include="My Project\Application.Designer.vb">
       <AutoGen>True</AutoGen>
@@ -155,11 +156,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>LocalizedResources.resx</DependentUpon>
     </Compile>
+    <Compile Include="Setting.vb" />
     <Compile Include="SystemColorSyncSettings.vb" />
     <Compile Include="Settings.vb" />
     <Compile Include="Synchronizer.vb" />
-    <Compile Include="UserSettings.vb" />
-    <Compile Include="Win32Value.vb" />
+    <Compile Include="Helpers\MyExtensions\Computer.vb" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="frmAboutBox.resx">

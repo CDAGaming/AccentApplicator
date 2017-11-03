@@ -33,10 +33,17 @@ Namespace My
                            stMsgDetails, MsgBoxStyle.Exclamation)
                 End If
             End If
+
+            'Shows first run dialog, if appropriate
+            If Settings.General_SaveSettings And Settings.Internal_FirstRunCompleted = False Then
+                MsgBox(String.Format(Resources.LocalizedResources.Info_FirstRunGreating, Application.Info.Title))
+                Settings.Internal_FirstRunCompleted = True
+            End If
+
         End Sub
 
         Private Sub MyApplication_StartupNextInstance(sender As Object, e As StartupNextInstanceEventArgs) Handles Me.StartupNextInstance
-            e.BringToForeground = False 'We disable this because the app has not visible window most of the time anyway.
+            e.BringToForeground = False 'We disable this because the app has no visible window most of the time anyway.
             MsgBox(String.Format(Resources.LocalizedResources.Info_ExistingAppInstance, Application.Info.Title), MsgBoxStyle.Information)
         End Sub
 
